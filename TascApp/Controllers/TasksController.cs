@@ -45,7 +45,7 @@ namespace TascApp.Controllers
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTask", new { id = task.Id }, task);
+            return CreatedAtAction("PostTask", new { id = task.Id }, task);
         }
 
         // PUT api/<TasksController>/5
@@ -75,7 +75,7 @@ namespace TascApp.Controllers
                 }
             }
 
-            return Ok(task);
+            return task;
         }
 
         // DELETE api/<TasksController>/5
